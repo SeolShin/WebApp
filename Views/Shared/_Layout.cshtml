@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-8" />
+
+    <title>@ViewBag.Title - KETI 데이터베이스</title>
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")    
+    @Styles.Render("~/Assets/css")
+
+</head>
+
+<body class="boxed">
+    <div id="preloader"></div>
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("산업자원부 기술과제", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://www.keti.re.kr/main/main.php">전자부품연구원</a></li>                        
+                        <li><a href="https://www.keti.re.kr/main/main.php">산업자원부</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+ 
+    </div>
+    </header>
+    <div class="container body-content">
+
+        <section id="top-navigation" class="container-fluid nopadding">
+            <div class="row nopadding ident e-bg-light-texture">
+                <!-- Name-Position -->
+                <div class="row nopadding name">
+                    <div class="col-md-12 name-title"><h3 class="font-accident-two-light uppercase">다량의 대상물 대상 인공지능 기반 조립 로봇 시스템</h3></div>
+                </div>
+
+                <!-- /Name-Position -->
+                <!-- Main Navigation -->
+                <ul id="nav" class="row nopadding cd-side-navigation">
+                    <li class="col-xs-3 col-sm-2 nopadding menuitem green">
+                        <a href="Index.html" class="hvr-sweep-to-bottom"><i class="flaticon-insignia"></i><span>home</span></a>
+                    </li>
+                    <li class="col-xs-3 col-sm-2 nopadding menuitem blue">
+                        <a href="About.html" class="hvr-sweep-to-bottom"><i class="flaticon-graduation61"></i><span>About</span></a>
+                    </li>
+                    <li class="col-xs-3 col-sm-2 nopadding menuitem cyan">
+                        <a href="Contact.html" class="hvr-sweep-to-bottom"><i class="flaticon-book-bag2"></i><span>Contact</span></a>
+                    </li>
+                    <li class="col-xs-3 col-sm-2 nopadding menuitem orange">
+                        <a href="Search.html" class="hvr-sweep-to-bottom"><i class="flaticon-placeholders4"></i><span>Download</span></a>
+                    </li>
+                    <li class="col-xs-3 col-sm-2 nopadding menuitem red">
+                        <a href="Display.html" class="hvr-sweep-to-bottom"><i class="flaticon-earphones18"></i><span>Feedback</span></a>
+                    </li>
+
+                    <li class="col-xs-3 col-sm-2 nopadding menuitem yellow">
+                        <a href="Blog.html" class="hvr-sweep-to-bottom"><i class="flaticon-earphones18"></i><span>Blog</span></a>
+                    </li>
+                </ul>
+                <!-- /Main Navigation -->
+            </div>
+        </section>   
+
+        <section id="resume" class="inner-content">
+            @RenderBody()
+        </section>
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Shirley Shin </p>
+        </footer>
+    </div>
+</body>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+@RenderSection("scripts", required: false)
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Assets/js")
+
+</html>

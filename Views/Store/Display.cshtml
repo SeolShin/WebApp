@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WebApp.Models.single_photo>
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<div class="form-group">
+
+    @foreach (var item in Model)
+    {
+        <img src="data:image;base64,@System.Convert.ToBase64String(@item.img)" />
+    }
+</div>

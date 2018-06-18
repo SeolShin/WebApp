@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KETIdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="object_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="black_box" Type="nchar" MaxLength="20" />
+          <Property Name="freetime" Type="nchar" MaxLength="20" />
+          <Property Name="gear" Type="nchar" MaxLength="20" />
+          <Property Name="glue" Type="nchar" MaxLength="20" />
+          <Property Name="hotbreak" Type="nchar" MaxLength="20" />
+          <Property Name="listerin" Type="nchar" MaxLength="20" />
+          <Property Name="pen" Type="nchar" MaxLength="20" />
+          <Property Name="phone" Type="nchar" MaxLength="20" />
+          <Property Name="red_box" Type="nchar" MaxLength="20" />
+          <Property Name="shaft" Type="nchar" MaxLength="20" />
+          <Property Name="sneakers" Type="nchar" MaxLength="20" />
+          <Property Name="in_box" Type="nchar" MaxLength="20" />
+          <Property Name="multi" Type="nchar" MaxLength="20" />
+          <Property Name="multi2" Type="nchar" MaxLength="20" />
+          <Property Name="multi3" Type="nchar" MaxLength="20" />
+          <Property Name="top_view" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="single_photo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="anno" Type="varbinary(max)" />
+          <Property Name="img" Type="varbinary(max)" />
+          <Property Name="annoaddress" Type="nchar" MaxLength="400" Nullable="false" />
+          <Property Name="imgaddress" Type="nchar" MaxLength="400" Nullable="false" />
+          <Property Name="width" Type="int" Nullable="false" />
+          <Property Name="height" Type="int" Nullable="false" />
+          <Property Name="totalobject" Type="int" />
+          <Property Name="name" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'black_box' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'freetime' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'gear' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'glue' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'hotbreak' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'in_box' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'listerin' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'pen' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'phone' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'red_box' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'shaft' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'sneakers' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'multi' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'multi2' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'multi3' in the table 'KETIdb.dbo.subject_list' was excluded.
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'top_view' in the table 'KETIdb.dbo.subject_list' was excluded.-->
+        <EntityType Name="subject_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KETIdbModelStoreContainer">
+          <EntitySet Name="object_list" EntityType="Self.object_list" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="single_photo" EntityType="Self.single_photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subject_list" EntityType="Self.subject_list" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KETIdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="object_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="black_box" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="freetime" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="gear" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="glue" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="hotbreak" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="listerin" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pen" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="red_box" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="shaft" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="sneakers" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="in_box" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="multi" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="multi2" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="multi3" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="top_view" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="single_photo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="anno" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="annoaddress" Type="String" MaxLength="400" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="imgaddress" Type="String" MaxLength="400" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="width" Type="Int32" Nullable="false" />
+          <Property Name="height" Type="Int32" Nullable="false" />
+          <Property Name="totalobject" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="subject_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KETIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="object_list" EntityType="Self.object_list" />
+          <EntitySet Name="single_photo" EntityType="Self.single_photo" />
+          <EntitySet Name="subject_list" EntityType="Self.subject_list" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KETIdbModelStoreContainer" CdmEntityContainer="KETIEntities">
+          <EntitySetMapping Name="object_list">
+            <EntityTypeMapping TypeName="KETIdbModel.object_list">
+              <MappingFragment StoreEntitySet="object_list">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="black_box" ColumnName="black_box" />
+                <ScalarProperty Name="freetime" ColumnName="freetime" />
+                <ScalarProperty Name="gear" ColumnName="gear" />
+                <ScalarProperty Name="glue" ColumnName="glue" />
+                <ScalarProperty Name="hotbreak" ColumnName="hotbreak" />
+                <ScalarProperty Name="listerin" ColumnName="listerin" />
+                <ScalarProperty Name="pen" ColumnName="pen" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="red_box" ColumnName="red_box" />
+                <ScalarProperty Name="shaft" ColumnName="shaft" />
+                <ScalarProperty Name="sneakers" ColumnName="sneakers" />
+                <ScalarProperty Name="in_box" ColumnName="in_box" />
+                <ScalarProperty Name="multi" ColumnName="multi" />
+                <ScalarProperty Name="multi2" ColumnName="multi2" />
+                <ScalarProperty Name="multi3" ColumnName="multi3" />
+                <ScalarProperty Name="top_view" ColumnName="top_view" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="single_photo">
+            <EntityTypeMapping TypeName="KETIdbModel.single_photo">
+              <MappingFragment StoreEntitySet="single_photo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anno" ColumnName="anno" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="annoaddress" ColumnName="annoaddress" />
+                <ScalarProperty Name="imgaddress" ColumnName="imgaddress" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="totalobject" ColumnName="totalobject" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subject_list">
+            <EntityTypeMapping TypeName="KETIdbModel.subject_list">
+              <MappingFragment StoreEntitySet="subject_list">
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
